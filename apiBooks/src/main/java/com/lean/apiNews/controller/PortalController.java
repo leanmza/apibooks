@@ -21,7 +21,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -40,10 +42,18 @@ public class PortalController {
         return newsService.newsList();
     }
 
-    @PostMapping("/createNews")
-    public String postCreateNews(@RequestBody News news) throws MyException {
+//    @PostMapping("/createNews") //Modelo para trabajar con JSON
+//    public String postCreateNews(@RequestBody News news) throws MyException {
+//      
+//         newsService.createNews(news);
+//
+//           return "news guardada";
+//    }
+    
+    @PostMapping("/postNews")
+    public String postNews(@RequestParam String title, @RequestParam String body, MultipartFile imageFile) throws MyException {
       
-         newsService.createNews(news);
+         newsService.createNews(title, body, imageFile);
 
            return "news guardada";
     }

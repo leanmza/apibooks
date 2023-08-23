@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lean</groupId>
-	<artifactId>apiNews</artifactId>
+	<artifactId>apiBooks</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>apiNews</name>
+	<name>apiBooks</name>
 	<description>Practica de API simple</description>
 	<properties>
 		<java.version>1.8</java.version>

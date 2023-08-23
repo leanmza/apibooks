@@ -5,10 +5,12 @@
 package com.lean.apiNews.entity;
 
 import java.io.Serializable;
-import javax.persistence.Column;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -18,16 +20,17 @@ import org.hibernate.annotations.GenericGenerator;
  */
 @Entity
 @Data
-public class News implements Serializable {
-
+public class Image implements Serializable {
+    
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+    
+    private String name;
+    private String mime;  // IDENTIFICA EL FORMATO DE LA IMAGEN
 
-    private String title;
-    
-    @Column(columnDefinition = "LONGTEXT")
-    private String body;
-    
-    }
+    @Lob
+    @Basic(fetch = FetchType.LAZY) // ALMACENA LOS DATOS BINARIOS DE LA IMAGEN
+    private byte[] content;
+}

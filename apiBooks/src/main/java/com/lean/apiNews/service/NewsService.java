@@ -4,15 +4,19 @@
  */
 package com.lean.apiNews.service;
 
+import com.lean.apiNews.entity.Image;
 import com.lean.apiNews.entity.News;
 import com.lean.apiNews.exception.MyException;
 import com.lean.apiNews.repository.NewsRepository;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -24,13 +28,39 @@ public class NewsService {
     @Autowired
     private NewsRepository newsRepository;
 
-    @Transactional
-    public News createNews(News news) throws MyException {
+    @Autowired
+    private ImageService imageService;
 
+    @Transactional
+    public News createNews(String title, String body, MultipartFile imageFile) throws MyException {
+
+        News news = new News();
+        
+        news.setTitle(title);
+                
+        news.setBody(body);
+        
+        news.setDate(LocalDate.now());
+        
+        news.setTime(LocalTime.now());
+        
+        
+         if (imageFile != null) {
+
+            Image image = imageService.saveImage(imageFile);
+            news.setImage(image);
+        }
         newsRepository.save(news);
 
         return news;
     }
+//    @Transactional
+//    public News createNews(News news) throws MyException {
+//
+//        newsRepository.save(news);
+//
+//        return news;
+//    }
 
     @Transactional
     public void updateNews(String id, News news) throws MyException {
@@ -46,6 +76,7 @@ public class NewsService {
             if (news.getBody() != null) {
                 updatedNews.setBody(news.getBody());
             }
+
             newsRepository.save(updatedNews);
 
         }
