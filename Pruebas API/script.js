@@ -28,4 +28,43 @@ document.addEventListener("DOMContentLoaded", function () {
           newsAPI.appendChild(nuevoDiv); //inserto el nuevo div con todos los datos extraidos del array
         }
       })
-    });
+    })
+    
+//     document.addEventListener("DOMContentLoaded", function () {
+//       const form = document.getElementById("formLogin");
+
+//       form.addEventListener("submit", function (event) {
+//           event.preventDefault(); // Evita la recarga de la página por defecto
+
+//           const formData = new FormData(form);
+
+//           // Puedes agregar más validaciones aquí si es necesario
+
+//           fetch("http://localhost:8080/api/postNews", {
+//             method: "POST",
+//             body: formData,
+//         })
+//             .then(response => {
+//                 if (response.ok) {
+//                     return response.text(); // Leer el cuerpo de la respuesta si la solicitud fue exitosa
+//                 } else {
+//                     throw new Error("Error en la solicitud");
+//                 }
+//             })
+//             .then(data => {
+//                 console.log("Respuesta del servidor:", data); // Hacer algo con la respuesta del servidor
+//             })
+//             .catch(error => {
+//                 console.error("Error:", error); // Manejar errores de red u otros errores
+//             });
+        
+//   });
+
+// })
+
+
+
+
+
+ 
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ESTILOS CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    
+    <!-- JQUERYS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+</head>
+    <body>
+
+
+        <main>
+            <div class="container-fluid containerForm">
+                <div class="row rowForm">
+
+
+                        <form
+                           
+                            method="POST"
+                             id="formLogin"
+                            enctype="multipart/form-data"
+                            >
+
+                            <!-- Title input -->
+                            <div class="form-outline mb-3 col-12">
+                                <input
+                                    type="text"
+                                    id="title"
+                                    class="form-control form-control-lg"
+                                    placeholder="Título"
+                                    name="title"
+                                    />
+                                <label class="form-label" for="title">Título</label>
+                            </div>
+
+                            <!-- Body input -->
+                            <div class="form-outline mb-3 col-12">
+                                <textarea 
+                                    name="body" 
+                                    id="body" 
+                                    cols="30" 
+                                    rows="15" 
+                                    class="form-control form-control-lg inputBody" 
+                                    placeholder="Cuerpo de la noticia"></textarea>
+
+                                <label class="form-label" for="body">Cuerpo de la noticia</label>
+                            </div>
+
+                            <div class="row rowDataForm">
+
+                                <!-- Category select -->
+                                <div class="form-outline mb-2 col-3">
+                                    <select
+                                        id="category"
+                                        class="form-control form-control-lg"
+                                        placeholder="Categoría"
+                                        name="category"
+                                        >
+                                        <option value="mendoza">MENDOZA</option>
+                                        <option value="pais">PAÍS</option>
+
+                                    </select>
+                                    <label class="form-label" for="title">Categoría</label>
+
+                                </div>       
+
+                                <!-- Suscriber input
+                                <div class="form-outline mb-2 col-3  divCheckbox">
+                                    <label class="form-check-label" for="subscriberContent">¿Exclusivo suscritores?</label>
+                                    <input
+                                        type="checkbox"
+                                        id="subscriberContent"
+                                        class="form-check-input"    
+                                        name="subscriberContent"
+                                        autocomplete="off"
+                                        />
+                                      
+                                </div> -->
+                           
+                              
+                              
+
+                                <!-- Image input -->
+                                <div class="form-outline mb-2 col-5">
+                                    <input
+                                        type="file"
+                                        id="image"
+                                        class="form-control form-control-lg"
+                                        placeholder="Subir imagen"
+                                        name="imageFile"
+                                        />
+                                    <label class="form-label" for="image">Subir imagen</label>
+                                </div>
+                            </div>
+
+                            <div class="text-center text-lg-start mt-2 pt-2">
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary btn-lg btnSubmit"
+                                    id="btnSubmit"
+                                    >
+                                    Guardar Noticia
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+    <script src="script.js"></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
